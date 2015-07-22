@@ -1,12 +1,14 @@
-<html lang="en" data-ember-extension="1"><head>
+<!DOCTYPE html>
+<html lang="en" data-ember-extension="1">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Ben LIU">
+    <meta name="author" content="Ben">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Fretcube</title>
+    <title>Fret3</title>
 
     <!-- Bootstrap core CSS -->
     <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -19,7 +21,8 @@
 
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -36,7 +39,7 @@
     <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+                <button type="button" class="navbar-toggle" data-tog   gle="collapse" data-target="#navbar-collapse-01">
                     <span class="sr-only">Toggle navigation</span>
                 </button>
                 <a class="navbar-brand" href="#">Fret<sup>3</sup></a>
@@ -60,9 +63,11 @@
                     </li>
                 </ul>
 
-            </div><!-- /.navbar-collapse -->
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-    </nav><!-- /navbar -->
+    </nav>
+    <!-- /navbar -->
     <!--</div>-->
 
     <!-- Main component for a primary marketing message or call to action -->
@@ -70,61 +75,91 @@
     <div class="jumbotron">
         <h3>Welcome to Fret<sup>3</sup></h3>
         <h6>Know your fretboard inside out</h6>
-    </div> <!-- /container -->
+    </div>
+    <!-- /container -->
+
+    <!--************************************************************-->
+    <!-- ************************* 只看这一段 ***********************-->
+    <!--************************************************************-->
 
     <div class="col-md-8">
 
         <div class="row demo-row">
             <div class="tile">
                 <h4 class="title">Scales<sup>1</sup></h4>
-                <select class="select select-danger" data-toggle="select">
-                    <option value="0">C</option>
-                    <option value="1">D</option>
-                    <option value="2">G</option>
-                    <option value="3">B</option>
-                    <option value="4">D</option>
-                    <option value="5">D</option>
-                    <option value="6">D</option>
-                    <option value="7">D</option>
+                <select class="select select-danger select-sm" data-toggle="select" id="scaleX"> <!--第1个select-->
+                    <!--<optgroup label="Keys"></optgroup>-->
+                        <option value="0">C</option>
+                        <option value="1">C#/Db</option>
+                        <option value="2">D</option>
+                        <option value="3">D#/Eb</option>
+                        <option value="4">E</option>
+                        <option value="5">F</option>
+                        <option value="6">F#/Gb</option>
+                        <option value="7">G</option>
+                        <option value="8">G#/Ab</option>
+                        <option value="9">A</option>
+                        <option value="10">A#/Bb</option>
+                        <option value="11">B/Cb</option>
                 </select>
 
-                <select class="select select-danger" data-toggle="select">
-                    <option value="0">Major</option>
+                <select class="select select-danger select-sm" data-toggle="select" id="scaleY">
+                    <option value="0">Major</option> <!--第2个select-->
                     <option value="1">Minor</option>
                 </select>
-                <!--<button class="btn btn-block btn-info">Go <b class="caret"></b></button>-->
+
+                <button onclick="exeScales()" class="btn btn-inverse btn-sm">Go <b class="caret"></b></button> <!--button 触发-->
                 <!--<div class="row demo-row">-->
-                <div class="select select-success">
-                    <a href="#fakelink" class="btn btn-block btn-inverse">Go <b class="fui-arrow-right"></b> </a>
-                </div>
+                <!--<div class="select select-success">-->
+                    <!--<a onclick="exeScales()" href="#fakelink" class="btn btn-block btn-inverse">Go <b class="fui-arrow-right"></b> </a>-->
+                <!--</div>-->
+
+                <script type="text/javascript"> <!--这里不会 给看一下-->
+                 function exeScales(){
+                     var x = document.getElementById("scaleX")
+                         y = document.getElementById("scaleY")
+                    if (x.selectedIndex = 0 && y.selectedIndex = 0){
+                      alert(getArrNumMaj(1, arrNumMaj))
+                    }
+                 }
+                </script>
+
             </div>
-        </div> <!-- /row -->
+        </div>
+
+        <!--************************************************************-->
+        <!-- ************************* 只看这一段 结束 *******************-->
+        <!--************************************************************-->
+
+        <!-- /row -->
 
         <div class="row demo-row">
             <div class="tile">
                 <h4 class="title">Progression<sup>3</sup></h4>
-                <select class="select select-primary" data-toggle="select">
+                <select class="select select-primary select-sm" data-toggle="select">
                     <option value="0">C</option>
-                    <option value="1">D</option>
-                    <option value="2">G</option>
-                    <option value="3">B</option>
-                    <option value="4">D</option>
-                    <option value="5">D</option>
-                    <option value="6">D</option>
-                    <option value="7">D</option>
+                    <option value="1">C#/Db</option>
+                    <option value="2">D</option>
+                    <option value="3">D#/Eb</option>
+                    <option value="4">E</option>
+                    <option value="5">F</option>
+                    <option value="6">F#/Gb</option>
+                    <option value="7">G</option>
+                    <option value="8">G#/Ab</option>
+                    <option value="9">A</option>
+                    <option value="10">A#/Bb</option>
+                    <option value="11">B/Cb</option>
                 </select>
 
-                <select class="select select-primary" data-toggle="select">
+                <select class="select select-primary select-sm" data-toggle="select">
                     <option value="0">Major</option>
                     <option value="1">Minor</option>
                 </select>
-                <!--<button class="btn btn-block btn-info">Go <b class="caret"></b></button>-->
-                <!--<div class="row demo-row">-->
-                <div class="select select-success">
-                    <a href="#fakelink" class="btn btn-block btn-inverse">Go <b class="fui-arrow-right"></b> </a>
-                </div>
+                <button onclick="exeProg()" class="btn btn-inverse btn-sm">Go <b class="caret"></b></button>
+
             </div>
-        </div> <!-- /row -->
+        </div>
+        <!-- /row -->
 
     </div>
 
@@ -133,52 +168,74 @@
         <div class="row demo-row">
             <div class="tile-right">
                 <h4 class="title">Chord<sup>2</sup></h4>
-                <select class="select select-warning" data-toggle="select">
+                <select class="select select-warning select-sm" data-toggle="select">
                     <option value="0">C</option>
-                    <option value="1">D</option>
-                    <option value="2">G</option>
-                    <option value="3">B</option>
-                    <option value="4">D</option>
-                    <option value="5">D</option>
-                    <option value="6">D</option>
-                    <option value="7">D</option>
+                    <option value="1">C#/Db</option>
+                    <option value="2">D</option>
+                    <option value="3">D#/Eb</option>
+                    <option value="4">E</option>
+                    <option value="5">F</option>
+                    <option value="6">F#/Gb</option>
+                    <option value="7">G</option>
+                    <option value="8">G#/Ab</option>
+                    <option value="9">A</option>
+                    <option value="10">A#/Bb</option>
+                    <option value="11">B/Cb</option>
                 </select>
 
-                <select class="select select-warning" data-toggle="select">
+                <select class="select select-warning select-sm" data-toggle="select">
                     <option value="0">Major</option>
                     <option value="1">Minor</option>
                 </select>
-                <!--<button class="btn btn-block btn-info">Go <b class="caret"></b></button>-->
-                <!--<div class="row demo-row">-->
-                <div class="select select-success">
-                    <a href="#fakelink" class="btn btn-block btn-inverse">Go <b class="fui-arrow-right"></b> </a>
-                </div>
+                <button onclick="exeChords()" class="btn btn-inverse btn-sm">Go <b class="caret"></b></button>
 
-                <p>..</p>
-                <p>..</p>
-                <p>..</p>
-                <p>..</p>
+                <p></p>
+
+                <p></p>
+
+                <p></p>
+
+                <p></p>
 
 
             </div>
-        </div> <!-- /row -->
+        </div>
+        <!-- /row -->
     </div>
 
     <!--<div class="col-md-8">-->
 
 
-    <!--</div>-->
+</div>
+
+<footer>
+
+    <div class="container">
 
 
+        <div class="span7">
+            <h3 class="footer-title">Thanks</h3>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="dist/js/vendor/jquery.min.js"></script>
-    <script src="dist/js/flat-ui.min.js"></script>
-    <script src="dist/js/func.js"></script>
-    <script src="docs/assets/js/application.js"></script>
+            <p>Do you like this webApp? Want to get more stuff like this?<br>
+                Subscribe to designmodo news and updates to stay tuned on great designs.<br>
+                Go to: <a href="http://designmodo.com/flat-free" target="_blank">designmodo.com/flat-free</a>
+            </p>
 
 
-    <script type="text/javascript" src="chrome-extension://bmdblncegkenkacieihfhpjfppoconhi/in-page-script.js"></script></body></html>
+        </div>
+
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="dist/js/vendor/jquery.min.js"></script>
+<script src="dist/js/flat-ui.min.js"></script>
+<script src="dist/js/func.js"></script>
+<script src="docs/assets/js/application.js"></script>
+
+
+<script type="text/javascript" src="chrome-extension://bmdblncegkenkacieihfhpjfppoconhi/in-page-script.js"></script>
+</body>
+</html>
 
