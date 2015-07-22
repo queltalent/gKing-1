@@ -87,7 +87,8 @@
         <div class="row demo-row">
             <div class="tile">
                 <h4 class="title">Scales<sup>1</sup></h4>
-                <select class="select select-danger select-sm" data-toggle="select" id="scaleX"> <!--第1个select-->
+                <!--第1个select-->
+                <select class="select select-danger select-sm" data-toggle="select" id="scaleX">
                     <!--<optgroup label="Keys"></optgroup>-->
                         <option value="0">C</option>
                         <option value="1">C#/Db</option>
@@ -103,18 +104,17 @@
                         <option value="11">B/Cb</option>
                 </select>
 
+                <!--第2个select-->
                 <select class="select select-danger select-sm" data-toggle="select" id="scaleY">
-                    <option value="0">Major</option> <!--第2个select-->
+                    <option value="0">Major</option>
                     <option value="1">Minor</option>
                 </select>
 
-                <button onclick="exeScales()" class="btn btn-inverse btn-sm">Go <b class="caret"></b></button> <!--button 触发-->
-                <!--<div class="row demo-row">-->
-                <!--<div class="select select-success">-->
-                    <!--<a onclick="exeScales()" href="#fakelink" class="btn btn-block btn-inverse">Go <b class="fui-arrow-right"></b> </a>-->
-                <!--</div>-->
+                <!--button 触发-->
+                <button onclick="exeScales()" class="btn btn-inverse btn-sm">Go <b class="caret"></b></button>
 
-                <script type="text/javascript"> <!--这里不会 给看一下-->
+                <!--这里不会 给看一下-->
+                <script type="text/javascript">
                  function exeScales(){
                      var x = document.getElementById("scaleX")
                          y = document.getElementById("scaleY")
