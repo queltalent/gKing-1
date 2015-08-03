@@ -89,7 +89,7 @@
                 <h4 class="title">Scales<sup>1</sup></h4>
 
                 <!--第1个select-->
-                <select class="select select-danger select-sm" data-toggle="select" id="scaleX">
+                <select id="ddlViewBy" class="select select-danger select-sm" data-toggle="select" id="scaleX" onchange="check(this)";>
                     <!--<optgroup label="Keys"></optgroup>-->
                     <option value="0">C</option>
                     <option value="1">C#/Db</option>
@@ -106,7 +106,7 @@
                 </select>
 
                 <!--第2个select-->
-                <select class="select select-danger select-sm" data-toggle="select" id="scaleY">
+                <select class="select select-danger select-sm" data-toggle="select" id="scaleY" id="aalViewBy" onchange="check(this)">
                     <option value="0">Major</option>
                     <option value="1">Minor</option>
                 </select>
@@ -126,6 +126,15 @@
                         }
 
                     }
+                    
+                     function check(elem){
+	                    var e = document.getElementById("ddlViewBy");
+	                    var f = document.getElementById("aalViewBy");
+	                    var guitarRate = getArrayNumMaj(e.options[e.selectedIndex].value,f.options[f.selectedIndex].value);
+      
+	                    document.getElementById("demo").innerHTML = guitarRate;//getArrayNumMaj(e.options[e.selectedIndex].value,f.options[f.selectedIndex].value);
+                    }
+    
                 </script>
 
             </div>
