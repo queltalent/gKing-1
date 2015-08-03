@@ -32,7 +32,7 @@
 </head>
 
 <body data-ember-extension="1">
-
+<div id="demo"></div>
 <div class="container">
 
     <!-- Static navbar -->
@@ -89,7 +89,7 @@
                 <h4 class="title">Scales<sup>1</sup></h4>
 
                 <!--第1个select-->
-                <select class="select select-danger select-sm" data-toggle="select" id="scaleX">
+                <select class="select select-danger select-sm" data-toggle="select" id="scaleX" onchange="check(this)";>
                     <!--<optgroup label="Keys"></optgroup>-->
                     <option value="0">C</option>
                     <option value="1">C#/Db</option>
@@ -106,13 +106,13 @@
                 </select>
 
                 <!--第2个select-->
-                <select class="select select-danger select-sm" data-toggle="select" id="scaleY">
+                <select class="select select-danger select-sm" data-toggle="select" id="scaleY" onchange="check(this)";>
                     <option value="0">Major</option>
                     <option value="1">Minor</option>
                 </select>
 
                 <!--button 触发-->
-                <button onclick="exeScales()" class="btn btn-inverse btn-sm">Go <b class="caret"></b></button>
+                <button onclick="check(this)" class="btn btn-inverse btn-sm">Go <b class="caret"></b></button>
 
                 <!--这里不会 给看一下-->
                 <script type="text/javascript">
@@ -126,6 +126,13 @@
                         }
 
                     }
+                    
+                    function check(elem){
+    	                var e = document.getElementById("scaleX");
+	                    var f = document.getElementById("scaleY");
+	                    document.getElementById("demo").innerHTML = getArrayNumMaj(e.options[e.selectedIndex].value,f.options[f.selectedIndex].value);
+                    }
+
                 </script>
 
             </div>
