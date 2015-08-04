@@ -32,6 +32,15 @@
 </head>
 
 <body data-ember-extension="1">
+ <script>
+                    function check(elem){
+    	                var e = document.getElementById("scaleX");
+	                    var f = document.getElementById("scaleY");
+	                    document.getElementById("demo").innerHTML = getArrayNumMaj(e.options[e.selectedIndex].value,f.options[f.selectedIndex].value);
+                    }
+
+</script>
+
 <div id="demo"></div>
 <div class="container">
 
@@ -115,26 +124,7 @@
                 <button onclick="check(this)" class="btn btn-inverse btn-sm">Go <b class="caret"></b></button>
 
                 <!--这里不会 给看一下-->
-                <script type="text/javascript">
-
-                    function exeScales(){
-                        var x = document.getElementById("scaleX")         /*不会定义*/
-                        y = document.getElementById("scaleY")             /*不会定义*/
-                        if (x.selectedIndex = 0 && y.selectedIndex = 0){  /*语法错误*/
-                            getArrNumMaj(1, arrNumMaj)                    /* 传完参数，然后咋返回，是不是 func.js 少一个返回的函数*/
-                            alert()                                       /*先输出一个msg就行了*/
-                        }
-
-                    }
-                    
-                    function check(elem){
-    	                var e = document.getElementById("scaleX");
-	                    var f = document.getElementById("scaleY");
-	                    document.getElementById("demo").innerHTML = getArrayNumMaj(e.options[e.selectedIndex].value,f.options[f.selectedIndex].value);
-                    }
-
-                </script>
-
+               
             </div>
         </div>
 
